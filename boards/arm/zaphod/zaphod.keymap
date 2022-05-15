@@ -70,7 +70,7 @@
                 &kp GRAVE    &kp EXCL     &kp AT     &kp POUND  &kp PERCENT     &kp QUESTION  &kp PLUS   &kp PIPE       &kp AMPS  &kp UNDER
                 &kp SEMI     &kp COMMA    &kp DOT    &kp LS(N4) &kp QUOT        &kp SLASH     &kp EQUAL  &kp BACKSLASH  &kp STAR  &kp MINUS
                 &trans       &kp LBRC     &kp LBKT   &kp LPAR   &kp APOS        &kp CARET     &kp RPAR   &kp RBKT       &kp RBRC  &trans
-                                                     &trans     &mo AJDUST      &trans          &trans
+                                                     &trans     &mo ADJUST      &trans          &trans
             >;
         };
 
