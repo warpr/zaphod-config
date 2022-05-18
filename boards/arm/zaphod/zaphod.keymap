@@ -76,7 +76,7 @@
             bindings = <
             // ╭────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────╮
                  &kp EXCL     &kp AT       &kp POUND    &kp PERCENT  &kp COMMA        &kp DOT       &kp AMPS    &kp STAR     &kp PLUS     &kp BACKSPACE
-                 &kp CARET    &kp GRAVE    &kp TILDE    &kp DOLLAR   &kp APOS         &kp COLON     &kp SLASH   &kp EQUAL    &kp BSLSH    &kp MINUS
+                 &kp CARET    &kp GRAVE    &kp TILDE    &kp DOLLAR   &kp APOS         &kp COLON     &kp SLASH   &kp EQUAL    &kp BSLH     &kp MINUS
                  &trans       &kp LBRC     &kp LBKT     &kp LPAR     &kp LT           &kp GT        &kp RPAR    &kp RBKT     &kp RBRC     &trans
             // ╰────────────┴────────────┴────────────╮                                                       ╭────────────┴────────────┴────────────╯
                                                         &trans       &mo ADJUST       &trans        &trans
