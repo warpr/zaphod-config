@@ -54,7 +54,6 @@
             // ╰────────────┴────────────┴────────────╮                                                       ╭────────────┴────────────┴────────────╯
                                                        &kp LCTRL  &lt LOWER SPACE    &lt RAISE RET  &kp RSHIFT
             //                                        ╰────────────┴────────────╯   ╰────────────┴────────────╯
-
             >;
         };
 
@@ -75,8 +74,8 @@
             label = "Raise";
             bindings = <
             // ╭────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-                 &kp TILDE    &kp COLON    &kp QUOT     &kp DOT      &none            &none        &kp QMARK    &kp PLUS     &kp PIPE     &kp UNDER
-                 &kp GRAVE    &kp SEMI     &kp APOS     &kp DOLLAR   &kp COMMA        &none        &kp SLASH    &kp EQUAL    &kp BSLH     &kp MINUS
+                 &kp TILDE    &kp COMMA    &kp DOT      &kp COLON    &none            &none        &kp QMARK    &kp PLUS     &kp PIPE     &kp UNDER
+                 &kp GRAVE    &kp APOS     &kp DQT      &kp DOLLAR   &kp SEMI         &none        &kp SLASH    &kp EQUAL    &kp BSLH     &kp MINUS
                  &trans       &kp LBRC     &kp LBKT     &kp LPAR     &kp LT           &kp GT       &kp RPAR     &kp RBKT     &kp RBRC     &trans
             // ╰────────────┴────────────┴────────────╮                                                       ╭────────────┴────────────┴────────────╯
                                                         &trans       &mo ADJUST       &trans        &trans
