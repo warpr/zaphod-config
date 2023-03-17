@@ -21,6 +21,11 @@
 #define KW_WINF    LG(GRAVE)           // cmd+` (macos, next window of current app)
 #define KW_WINB    LG(TILDE)           // cmd+~ (macos, prev window of current app)
 
+#define KW_UNDO    LG(Z)               // cmd+z (undo)
+#define KW_CUT     LG(X)               // cmd+x (cut)
+#define KW_COPY    LG(C)               // cmd+c (copy)
+#define KW_UNDO    LG(V)               // cmd+v (paste)
+
 #define WORD_L     LA(LEFT)            // alt+left (word left, macos/emacs)
 #define WORD_R     LA(RIGHT)           // alt+right (word right, macos/emacs)
 
@@ -38,6 +43,21 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings = <&kp ESC>, <&kp BACKSLASH>;
+        ),
+        ZMK_MACRO(bs_four,
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp BACKSPACE>, <&kp BACKSPACE>, <&kp BACKSPACE>, <&kp BACKSPACE>;
+        )
+        ZMK_MACRO(del_four,
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp DEL>, <&kp DEL>, <&kp DEL>, <&kp DEL>;
+        ),
+        ZMK_MACRO(spc_four,
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp SPACE>, <&kp SPACE>, <&kp SPACE>, <&kp SPACE>;
         )
     };
 
@@ -48,11 +68,11 @@
             label = "Base";
             bindings = <
             // ╭────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-                 &kp ESC      &kp TAB      &kp Z        &kp P        &kp Y            &kp F        &kp G        &kp C        &kp R        &kp L
+                 &kp APOS     &kp COMMA    &kp DOT      &kp P        &kp Y            &kp F        &kp G        &kp C        &kp R        &kp L
                  &kp A        &kp O        &kp E        &kp U        &kp I            &kp D        &kp H        &kp T        &kp N        &kp S
-                 &kp LCMD     &kp Q        &kp J        &kp K        &kp X            &kp B        &kp M        &kp W        &kp V        &kp RALT
+                 &kp SEMI     &kp Q        &kp J        &kp K        &kp X            &kp B        &kp M        &kp W        &kp V        &kp Z
             // ╰────────────┴────────────┴────────────╮                                                       ╭────────────┴────────────┴────────────╯
-                                                       &kp LCTRL  &lt LOWER SPACE    &lt RAISE RET  &kp RSHIFT
+                                                        &kp TAB  &lt LOWER SPACE    &lt RAISE RET  &kp ESC
             //                                        ╰────────────┴────────────╯   ╰────────────┴────────────╯
             >;
         };
@@ -61,9 +81,9 @@
             label = "Lower";
             bindings = <
             // ╭────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-                 &kp PG_UP    &kp WORD_L   &kp UP       &kp WORD_R   &kp HOME         &kp DEL      &kp N7       &kp N8       &kp N9       &kp BACKSPACE
-                 &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp END          &kp KW_EMOJ  &kp N4       &kp N5       &kp N6       &esc_bslash
-                 &trans       &kp KW_WINB  &kp KW_MOOM  &kp KW_WINF  &kp KW_FRSH      &kp KW_DEVT  &kp N1       &kp N2       &kp N3       &trans
+                 &kp PG_UP    &kp WORD_L   &kp UP       &kp WORD_R   &kp HOME         &del_four    &kp N7       &kp N8       &kp N9       &bs_four
+                 &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp END          &kp DEL      &kp N4       &kp N5       &kp N6       &kp BACKSPACE
+                 &kp KW_WINB  &kp KW_CUT   &kp KW_COPY  &kp KW_PASTE &kp KW_WINF      &kp KW_MOOM  &kp N1       &kp N2       &kp N3       &kp KW_UNDO
             // ╰────────────┴────────────┴────────────╮                                                       ╭────────────┴────────────┴────────────╯
                                                         &trans       &trans           &kp N0       &trans
             //                                        ╰────────────┴────────────╯   ╰────────────┴────────────╯
@@ -74,11 +94,11 @@
             label = "Raise";
             bindings = <
             // ╭────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-                 &kp TILDE    &kp COMMA    &kp DOT      &kp COLON    &none            &none        &kp QMARK    &kp PLUS     &kp PIPE     &kp UNDER
-                 &kp GRAVE    &kp APOS     &kp DQT      &kp DOLLAR   &kp SEMI         &none        &kp SLASH    &kp EQUAL    &kp BSLH     &kp MINUS
-                 &trans       &kp LBRC     &kp LBKT     &kp LPAR     &kp LT           &kp GT       &kp RPAR     &kp RBKT     &kp RBRC     &trans
+                 &kp EXCL     &kp AT       &kp HASH     &kp PRCNT    &trans           &trans       &kp AMPS     &kp STAR     &kp PLUS     &kp UNDER
+                 &kp CARET    &kp GRAVE    &kp TILDE    &kp DOLLAR   &kp KW_EMOJ      &kp QMARK    &kp SLASH    &kp EQUAL    &kp BSLH     &kp MINUS
+                 &trans       &kp LBRC     &kp LBKT     &kp LPAR     &kp KW_FRSH      &kp KW_DEVT  &kp RPAR     &kp RBKT     &kp RBRC     &kp PIPE
             // ╰────────────┴────────────┴────────────╮                                                       ╭────────────┴────────────┴────────────╯
-                                                        &trans       &mo ADJUST       &trans        &trans
+                                                        &spc_four    &mo ADJUST       &trans       &esc_bslash
             //                                        ╰────────────┴────────────╯   ╰────────────┴────────────╯
             >;
         };
