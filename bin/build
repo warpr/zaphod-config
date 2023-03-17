@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd ~/code/zmk/app
+west build --pristine -b zaphod -d build/zaphod -- -DZMK_CONFIG="/home/kuno/code/zaphod-config"
