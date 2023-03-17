@@ -43,25 +43,25 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings = <&kp ESC>, <&kp BACKSLASH>;
-        );
+        )
 
         ZMK_MACRO(bs_four,
             wait-ms = <40>;
             tap-ms = <40>;
             bindings = <&kp BACKSPACE>, <&kp BACKSPACE>, <&kp BACKSPACE>, <&kp BACKSPACE>;
-        );
+        )
 
         ZMK_MACRO(del_four,
             wait-ms = <40>;
             tap-ms = <40>;
             bindings = <&kp DEL>, <&kp DEL>, <&kp DEL>, <&kp DEL>;
-        );
+        )
 
         ZMK_MACRO(spc_four,
             wait-ms = <40>;
             tap-ms = <40>;
             bindings = <&kp SPACE>, <&kp SPACE>, <&kp SPACE>, <&kp SPACE>;
-        );
+        )
     };
 
     keymap {
