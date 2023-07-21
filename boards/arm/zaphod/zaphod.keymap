@@ -29,7 +29,6 @@
 #define WORD_L     LA(LEFT)            // alt+left (word left, macos/emacs)
 #define WORD_R     LA(RIGHT)           // alt+right (word right, macos/emacs)
 
-#define KW_SCR3    LG(LS(N3))          // screenshot (macos)
 #define KW_SCR4    LG(LS(N4))          // screenshot (region, macos)
 #define KW_SCR5    LG(LS(N5))          // screenshot (window/etc..., macos)
 
@@ -80,10 +79,10 @@
             bindings = <
             // ╭────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────╮
                  &kp APOS     &kp COMMA    &kp DOT      &kp P        &kp Y            &kp F        &kp G        &kp C        &kp R        &kp L
-              &ht_bl LCTRL A  &kp O        &kp E        &kp U        &kp I            &kp D        &kp H        &kp T        &kp N        &ht_bl RCTRL S
-          &ht_bl LSHIFT SEMI  &kp Q     &ht_bl LALT J  &ht_bl LCMD K  &kp X           &kp B      &ht_bl RCMD M  &ht_bl RALT W  &kp V      &ht_bl RSHIFT Z
+                 &kp A        &kp O        &kp E        &kp U        &kp I            &kp D        &kp H        &kp T        &kp N        &kp S
+          &ht_bl LSHIFT SEMI  &kp Q    &ht_bl LALT J  &ht_bl LCMD K  &kp X            &kp B      &ht_bl RCMD M  &ht_bl RALT W  &kp V      &ht_bl RSHIFT Z
             // ╰────────────┴────────────┴────────────╮                                                       ╭────────────┴────────────┴────────────╯
-                                                        &kp TAB  &lt LOWER SPACE    &lt RAISE RET  &kp ESC
+                                                  &ht_bl LCTRL TAB   &lt LOWER SPACE  &lt RAISE RET  &ht_bl RCTRL ESC
             //                                        ╰────────────┴────────────╯   ╰────────────┴────────────╯
             >;
         };
@@ -92,11 +91,11 @@
             label = "Lower";
             bindings = <
             // ╭────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-                 &kp PG_UP    &kp WORD_L   &kp UP       &kp WORD_R   &kp HOME         &del_four    &kp N7       &kp N8       &kp N9       &bs_four
-        &ht_bl LCTRL PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp END          &kp DEL      &kp N4       &kp N5       &kp N6       &ht_bl RCTRL BACKSPACE
-&ht_bl LSHIFT KW_WINB  &kp KW_CUT  &ht_bl LALT KW_COPY  &ht_bl LCMD KW_PASTE  &kp KW_WINF  &kp KW_MOOM  &ht_bl RCMD N1  &ht_bl RALT N2  &kp N3  &ht_bl RSHIFT KW_UNDO
+                 &kp PG_UP    &kp WORD_L   &kp UP       &kp WORD_R   &kp HOME         &kp DEL      &kp N7       &kp N8       &kp N9       &kp BACKSPACE
+                 &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp END          &trans       &kp N4       &kp N5       &kp N6       &trans
+      &trans  &kp KW_WINB  &ht_bl LALT KW_MOOM  &ht_bl LCMD KW_WINF  &trans           &del_four    &ht_bl RCMD N1  &ht_bl RALT N2  &kp N3   &ht_bl RSHIFT &bs_four
             // ╰────────────┴────────────┴────────────╮                                                       ╭────────────┴────────────┴────────────╯
-                                                        &trans       &trans           &kp N0       &trans
+                                                        &spc_four    &trans           &ht_bl RCTRL N0   &esc_bslash
             //                                        ╰────────────┴────────────╯   ╰────────────┴────────────╯
             >;
         };
@@ -105,11 +104,11 @@
             label = "Raise";
             bindings = <
             // ╭────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-                 &kp EXCL     &kp AT       &kp HASH     &kp PRCNT    &trans           &trans       &kp AMPS     &kp STAR     &kp PLUS     &kp UNDER
-          &ht_bl LCTRL CARET  &kp GRAVE    &kp TILDE    &kp DOLLAR   &kp KW_EMOJ      &kp QMARK    &kp SLASH    &kp EQUAL    &kp BSLH     &ht_bl RCTRL MINUS
-               &trans  &kp LBRC  &ht_bl LALT LBKT  &ht_bl LCMD LPAR  &kp KW_FRSH      &kp KW_DEVT  &ht_bl RCMD RPAR  &ht_bl RALT RBKT  &kp RBRC  &ht_bl RSHIFT PIPE
+                 &kp EXCL     &kp AT       &kp HASH     &kp PRCNT    &kp COLON        &kp PIPE     &kp AMPS     &kp STAR     &kp PLUS     &kp UNDER
+                 &kp CARET    &kp GRAVE    &kp TILDE    &kp DOLLAR   &kp KW_EMOJ      &kp QMARK    &kp SLASH    &kp EQUAL    &kp BSLH     &kp MINUS
+          &ht_bl LSHIFT LPAR  &kp LBRC  &ht_bl LALT LBKT  &ht_bl LCMD KW_EMOJ  &kp KW_FRSH      &kp KW_DEVT  &kp RCMD  &ht_bl RALT RBKT  &kp RBRC  &ht_bl RSHIFT RPAR
             // ╰────────────┴────────────┴────────────╮                                                       ╭────────────┴────────────┴────────────╯
-                                                        &spc_four    &mo ADJUST       &trans       &esc_bslash
+                                                        &trans       &mo ADJUST       &trans       &trans
             //                                        ╰────────────┴────────────╯   ╰────────────┴────────────╯
             >;
         };
@@ -118,9 +117,9 @@
             label = "Adjust";
             bindings = <
             // ╭────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-                 &kp F1       &kp F2       &kp F3       &kp F4      &kp C_VOL_UP      &kp INS       &kp PSCRN     &kp SLCK      &kp PAUSE_BREAK  &bt BT_CLR
-            &ht_bl LCTRL F5   &kp F6       &kp F7       &kp F8      &kp C_VOL_DN      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &kp RCTRL
-          &ht_bl LSHIFT F9   &kp F10  &ht_bl LALT F11  &ht_bl LCMD F12  &kp C_PP      &kp KW_SCR3  &ht_bl RCMD KW_SCR4  &ht_bl RALT KW_SCR5   &trans     &trans
+                 &kp F1       &kp F2       &kp F3       &kp F4       &trans           &kp INS       &kp PSCRN     &kp SLCK      &kp PAUSE_BREAK  &bt BT_CLR
+                 &kp F5       &kp F6       &kp F7       &kp F8       &trans           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+                 &kp F9       &kp F10      &kp F11      &kp F12      &trans           &trans        &kp KW_SCR4   &kp KW_SCR5   &trans     &trans
             // ╰────────────┴────────────┴────────────╮                                                       ╭────────────┴────────────┴────────────╯
                                                         &trans       &trans           &trans       &trans
             //                                        ╰────────────┴────────────╯   ╰────────────┴────────────╯
